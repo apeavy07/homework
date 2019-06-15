@@ -1,6 +1,6 @@
 Function CreateCombinedStocksWorksheet() As Object
     
-    '�() intent: to create the combined stocks worksheet with the "Ticker" and "Total Stock Volume" column headers
+    'ƒ() intent: to create the combined stocks worksheet with the "Ticker" and "Total Stock Volume" column headers
     
     Application.DisplayAlerts = False
     
@@ -43,7 +43,7 @@ Function CreateCombinedStocksWorksheet() As Object
 End Function
 Function GetLastRow() As Range
 
-    '�() intent: find the last row (based on column A) that contains data and return the range object
+    'ƒ() intent: find the last row (based on column A) that contains data and return the range object
     
             Dim LastRow As Range
             
@@ -66,7 +66,7 @@ Sub CombineStocksPerSheet()
         Year = s.Name
         s.Activate
     
-        ActiveSheet_LastRowIndex = Cells(Rows.Count, 1).End(xlUp).Row
+        ActiveSheet_LastRowIndex = GetLastRow().Row
         
         Ticker = Cells(2, 1).Value
         
